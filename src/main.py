@@ -47,6 +47,7 @@ print(highest_student)
 print("\nLowest Performing Student:")
 print(lowest_student)
 
+
 # Performance categorization
 def performance_category(marks):
     if marks >= 85:
@@ -68,10 +69,20 @@ print(df["Performance_Category"].value_counts())
 
 # Correlation analysis
 print("\nCorrelation with Final Marks:")
-print(df[["Study_Hours", "Attendance", "Assignment_Score",
-          "Previous_Marks", "Final_Marks"]].corr()["Final_Marks"])
+print(
+    df[
+        [
+            "Study_Hours",
+            "Attendance",
+            "Assignment_Score",
+            "Previous_Marks",
+            "Final_Marks"
+        ]
+    ].corr()["Final_Marks"]
+)
 
-# Visualization
+
+# Visualization 1: Study Hours vs Final Marks
 plt.figure(figsize=(8, 5))
 plt.scatter(df["Study_Hours"], df["Final_Marks"])
 plt.xlabel("Study Hours")
@@ -80,6 +91,8 @@ plt.title("Study Hours vs Final Marks")
 plt.grid(True)
 plt.show()
 
+
+# Visualization 2: Attendance vs Final Marks
 plt.figure(figsize=(8, 5))
 plt.scatter(df["Attendance"], df["Final_Marks"])
 plt.xlabel("Attendance (%)")
@@ -88,6 +101,8 @@ plt.title("Attendance vs Final Marks")
 plt.grid(True)
 plt.show()
 
+
+# Visualization 3: Assignment Score vs Final Marks
 plt.figure(figsize=(8, 5))
 plt.scatter(df["Assignment_Score"], df["Final_Marks"])
 plt.xlabel("Assignment Score")
@@ -95,5 +110,17 @@ plt.ylabel("Final Marks")
 plt.title("Assignment Score vs Final Marks")
 plt.grid(True)
 plt.show()
+
+
+# Quick performance summary
+print("\n--- Performance Summary ---")
+print(f"Total Students: {len(df)}")
+print(f"Average Final Marks: {average_final:.2f}")
+print(f"Highest Final Marks: {df['Final_Marks'].max()}")
+print(f"Lowest Final Marks: {df['Final_Marks'].min()}")
+print(
+    f"Students Needing Improvement: "
+    f"{(df['Performance_Category'] == 'Needs Improvement').sum()}"
+)
 
 print("\nAnalysis completed successfully.")

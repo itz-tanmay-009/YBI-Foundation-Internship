@@ -28,3 +28,15 @@ Student_Performance_Analysis-Github/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+## Key Results
+
+The analysis produced the following results:
+
+- Average Final Marks: 76.00
+- Average Study Hours: 4.80 hours
+- Average Attendance: 81.50%
+- Average Assignment Score: 76.25
+- Highest Final Marks: 97
+- Lowest Final Marks: 47
+
+The analysis also categorizes students into three performance levels: Excellent, Good, and Needs Improvement.
