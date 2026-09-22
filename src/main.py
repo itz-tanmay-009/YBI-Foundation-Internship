@@ -18,13 +18,16 @@ df = pd.DataFrame(data)
 print("STUDENT PERFORMANCE ANALYSIS")
 print("=" * 35)
 
+
 # Display dataset
 print("\nStudent Dataset:")
 print(df)
 
+
 # Basic statistics
 print("\nDataset Summary:")
 print(df.describe())
+
 
 # Calculate averages
 average_final = df["Final_Marks"].mean()
@@ -36,6 +39,7 @@ print(f"\nAverage Final Marks: {average_final:.2f}")
 print(f"Average Study Hours: {average_study:.2f}")
 print(f"Average Attendance: {average_attendance:.2f}%")
 print(f"Average Assignment Score: {average_assignment:.2f}")
+
 
 # Find highest and lowest performing students
 highest_student = df.loc[df["Final_Marks"].idxmax()]
@@ -58,17 +62,37 @@ def performance_category(marks):
         return "Needs Improvement"
 
 
-df["Performance_Category"] = df["Final_Marks"].apply(performance_category)
+df["Performance_Category"] = df["Final_Marks"].apply(
+    performance_category
+)
 
 print("\nPerformance Categories:")
-print(df[["Student_ID", "Final_Marks", "Performance_Category"]])
+print(
+    df[
+        ["Student_ID", "Final_Marks", "Performance_Category"]
+    ]
+)
 
-# Category count
+
+# Category count and percentage
+category_counts = df["Performance_Category"].value_counts()
+
+category_percentages = (
+    df["Performance_Category"].value_counts(normalize=True) * 100
+)
+
 print("\nCategory Count:")
-print(df["Performance_Category"].value_counts())
+print(category_counts)
+
+print("\nPerformance Category Percentages:")
+
+for category, percentage in category_percentages.items():
+    print(f"{category}: {percentage:.1f}%")
+
 
 # Correlation analysis
 print("\nCorrelation with Final Marks:")
+
 print(
     df[
         [
@@ -84,43 +108,87 @@ print(
 
 # Visualization 1: Study Hours vs Final Marks
 plt.figure(figsize=(8, 5))
-plt.scatter(df["Study_Hours"], df["Final_Marks"])
+
+plt.scatter(
+    df["Study_Hours"],
+    df["Final_Marks"]
+)
+
 plt.xlabel("Study Hours")
 plt.ylabel("Final Marks")
 plt.title("Study Hours vs Final Marks")
 plt.grid(True)
+
 plt.show()
 
 
 # Visualization 2: Attendance vs Final Marks
 plt.figure(figsize=(8, 5))
-plt.scatter(df["Attendance"], df["Final_Marks"])
+
+plt.scatter(
+    df["Attendance"],
+    df["Final_Marks"]
+)
+
 plt.xlabel("Attendance (%)")
 plt.ylabel("Final Marks")
 plt.title("Attendance vs Final Marks")
 plt.grid(True)
+
 plt.show()
 
 
 # Visualization 3: Assignment Score vs Final Marks
 plt.figure(figsize=(8, 5))
-plt.scatter(df["Assignment_Score"], df["Final_Marks"])
+
+plt.scatter(
+    df["Assignment_Score"],
+    df["Final_Marks"]
+)
+
 plt.xlabel("Assignment Score")
 plt.ylabel("Final Marks")
 plt.title("Assignment Score vs Final Marks")
 plt.grid(True)
+
 plt.show()
 
 
 # Quick performance summary
 print("\n--- Performance Summary ---")
+
 print(f"Total Students: {len(df)}")
-print(f"Average Final Marks: {average_final:.2f}")
-print(f"Highest Final Marks: {df['Final_Marks'].max()}")
-print(f"Lowest Final Marks: {df['Final_Marks'].min()}")
+
+print(
+    f"Average Final Marks: "
+    f"{average_final:.2f}"
+)
+
+print(
+    f"Highest Final Marks: "
+    f"{df['Final_Marks'].max()}"
+)
+
+print(
+    f"Lowest Final Marks: "
+    f"{df['Final_Marks'].min()}"
+)
+
 print(
     f"Students Needing Improvement: "
     f"{(df['Performance_Category'] == 'Needs Improvement').sum()}"
 )
+
+
+# Identify the overall class performance level
+if average_final >= 85:
+    class_level = "Excellent"
+elif average_final >= 70:
+    class_level = "Good"
+else:
+    class_level = "Needs Improvement"
+
+print(f"Overall Class Performance: {class_level}")
+
 
 print("\nAnalysis completed successfully.")
