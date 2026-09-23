@@ -1,35 +1,43 @@
 # Student Performance Analysis Using Python
 
-A Python-based data analysis project for studying student academic performance using
-Pandas, NumPy, and Matplotlib.
+A Python-based data analysis project for studying student academic performance
+using Pandas, NumPy, and Matplotlib.
 
 ---
 
 ## 📌 Project Overview
 
-**Student Performance Analysis Using Python** is a data analysis project developed
-to understand and analyze the academic performance of students using Python.
+**Student Performance Analysis Using Python** is a data analysis project
+developed to understand and analyze the academic performance of students
+using Python.
 
 The project uses a structured dataset containing information about students'
-study hours, attendance, assignment scores, previous marks, and final examination
-marks.
+study hours, attendance, assignment scores, previous marks, and final
+examination marks.
 
-The collected information is analyzed using Python programming and data analysis
-techniques to identify patterns, calculate statistical values, classify student
-performance, and generate meaningful visualizations.
+The data is analyzed using Python programming and data analysis techniques to:
 
-This project demonstrates how Python can be used to transform raw student data
-into useful information that can help in understanding academic performance.
+- Calculate statistical values
+- Analyze average performance
+- Identify highest and lowest performers
+- Study relationships between academic factors
+- Classify student performance
+- Calculate performance distribution
+- Generate data visualizations
+
+The project also demonstrates how a Python application can be organized into
+multiple modules instead of keeping all functionality in a single file.
 
 ---
 
-## 🎯 Project Objectives
+# 🎯 Project Objectives
 
 The main objectives of this project are:
 
 - To create and work with a structured student performance dataset.
 - To understand how Pandas can be used for data analysis.
-- To calculate important statistical values from the dataset.
+- To use NumPy for numerical operations.
+- To calculate important statistical values.
 - To analyze average student performance.
 - To identify the highest and lowest performing students.
 - To study the relationship between study hours and final marks.
@@ -38,13 +46,14 @@ The main objectives of this project are:
 - To compare previous marks with final examination marks.
 - To classify students into different performance categories.
 - To calculate the percentage of students in each category.
-- To determine the overall class performance level.
+- To determine the overall class performance.
 - To visualize important relationships using Matplotlib.
 - To demonstrate practical Python programming and data analysis skills.
+- To practice organizing a Python project using multiple modules.
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 | Technology | Purpose |
 |---|---|
@@ -55,13 +64,14 @@ The main objectives of this project are:
 | Jupyter Notebook | Interactive analysis |
 | Google Colab | Notebook development and execution |
 | Git | Version control |
-| GitHub | Project hosting and collaboration |
+| GitHub | Project hosting and documentation |
+| VS Code | Project development |
 
 ---
 
-## 📚 Python Concepts Demonstrated
+# 📚 Python Concepts Demonstrated
 
-This project demonstrates several fundamental Python concepts, including:
+This project demonstrates several fundamental Python concepts:
 
 - Variables
 - Lists
@@ -73,24 +83,13 @@ This project demonstrates several fundamental Python concepts, including:
 - DataFrames
 - Data filtering
 - Statistical calculations
-- Functions from Python libraries
-- File and project organization
+- Functions from external libraries
+- Modular programming
+- File organization
+- Exception-free program execution
+- Version control using Git
 
 ---
-### 🧩 Module Responsibilities
-
-The Python implementation is divided into separate modules to keep the project
-organized and maintainable.
-
-| Module | Responsibility |
-|---|---|
-| `data.py` | Creates and prepares the student dataset |
-| `analysis.py` | Performs calculations, classification, statistics, and correlation analysis |
-| `visualization.py` | Generates charts and visualizations |
-| `main.py` | Controls the complete analysis workflow and displays the results |
-
-This modular structure separates different responsibilities instead of keeping
-the complete application in a single Python file.
 
 # 📊 Dataset Description
 
@@ -100,11 +99,11 @@ Each student record contains the following attributes:
 
 | Column | Data Type | Description |
 |---|---|---|
-| `Student_ID` | Integer | Unique identification number of the student |
+| `Student_ID` | Integer | Unique identification number |
 | `Study_Hours` | Integer | Number of hours spent studying |
 | `Attendance` | Integer | Attendance percentage |
-| `Assignment_Score` | Integer | Score obtained in assignments |
-| `Previous_Marks` | Integer | Marks obtained previously |
+| `Assignment_Score` | Integer | Assignment score |
+| `Previous_Marks` | Integer | Previous examination marks |
 | `Final_Marks` | Integer | Final examination marks |
 
 ### Example
