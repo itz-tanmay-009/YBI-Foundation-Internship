@@ -77,6 +77,20 @@ This project demonstrates several fundamental Python concepts, including:
 - File and project organization
 
 ---
+### 🧩 Module Responsibilities
+
+The Python implementation is divided into separate modules to keep the project
+organized and maintainable.
+
+| Module | Responsibility |
+|---|---|
+| `data.py` | Creates and prepares the student dataset |
+| `analysis.py` | Performs calculations, classification, statistics, and correlation analysis |
+| `visualization.py` | Generates charts and visualizations |
+| `main.py` | Controls the complete analysis workflow and displays the results |
+
+This modular structure separates different responsibilities instead of keeping
+the complete application in a single Python file.
 
 # 📊 Dataset Description
 
