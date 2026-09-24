@@ -12,6 +12,7 @@ def find_top_and_lowest_students(df):
     """Find the students with the highest and lowest final marks."""
     highest_student = df.loc[df["Final_Marks"].idxmax()]
     lowest_student = df.loc[df["Final_Marks"].idxmin()]
+
     return highest_student, lowest_student
 
 
@@ -19,24 +20,29 @@ def performance_category(marks):
     """Classify a student's performance based on final marks."""
     if marks >= 85:
         return "Excellent"
-    elif marks >= 70:
+    if marks >= 70:
         return "Good"
-    else:
-        return "Needs Improvement"
+    return "Needs Improvement"
 
 
 def add_performance_category(df):
-    """Add a performance category column to the student DataFrame."""
-    df["Performance_Category"] = df["Final_Marks"].apply(performance_category)
+    """Add a performance category column to the DataFrame."""
+    df["Performance_Category"] = df["Final_Marks"].apply(
+        performance_category
+    )
     return df
 
 
 def calculate_category_statistics(df):
     """Calculate counts and percentages for each performance category."""
     category_counts = df["Performance_Category"].value_counts()
+
     category_percentages = (
-        df["Performance_Category"].value_counts(normalize=True) * 100
+        df["Performance_Category"]
+        .value_counts(normalize=True)
+        .mul(100)
     )
+
     return category_counts, category_percentages
 
 
@@ -49,14 +55,14 @@ def calculate_correlation(df):
         "Previous_Marks",
         "Final_Marks"
     ]
+
     return df[columns].corr()["Final_Marks"]
 
 
 def determine_class_performance(average_final):
-    """Determine the overall class performance from the average final marks."""
+    """Determine overall class performance from average final marks."""
     if average_final >= 85:
         return "Excellent"
-    elif average_final >= 70:
+    if average_final >= 70:
         return "Good"
-    else:
-        return "Needs Improvement"
+    return "Needs Improvement"
