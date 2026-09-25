@@ -1,109 +1,121 @@
-# 🔎 Student Performance Analysis Features
+# Student Performance Analysis Using Python
 
-The project provides several analysis features to understand student academic
-performance in a structured way.
-
-## 📌 Average Performance
-
-The application calculates the average values of:
-
-- Final examination marks
-- Study hours
-- Attendance percentage
-- Assignment scores
-
-These values provide an overview of the overall class performance.
+A Python-based data analysis project for studying and understanding student
+academic performance using Pandas, NumPy, and Matplotlib.
 
 ---
 
-## 🏆 Highest and Lowest Performers
+## 📌 Project Overview
 
-The application automatically identifies:
+**Student Performance Analysis Using Python** is a data analysis project
+developed to analyze academic performance using Python programming and data
+analysis techniques.
 
-- Student with the highest final marks
-- Student with the lowest final marks
+The project uses a structured dataset containing information about students'
+study hours, attendance, assignment scores, previous marks, and final
+examination marks.
 
-This helps identify the performance range within the dataset.
+The application processes the dataset and generates useful information such as:
+
+- Average academic performance
+- Highest and lowest performing students
+- Student performance categories
+- Performance distribution
+- Students requiring improvement
+- Correlation between academic factors
+- Additional statistical measures
+- Data visualizations
+- Overall class performance
+
+The project is organized into multiple Python modules to keep the code
+structured, readable, and maintainable.
 
 ---
 
-## 📋 Performance Classification
+# 🎯 Project Objectives
 
-Each student is classified into one of three categories:
+The main objectives of this project are:
 
-| Marks | Category |
+- To create and work with a structured student performance dataset.
+- To understand how Pandas can be used for data analysis.
+- To use NumPy for numerical operations.
+- To calculate important statistical values.
+- To analyze average student performance.
+- To identify the highest and lowest performing students.
+- To identify students who require academic improvement.
+- To study the relationship between study hours and final marks.
+- To analyze the relationship between attendance and final marks.
+- To analyze the relationship between assignment scores and final marks.
+- To compare previous marks with final examination marks.
+- To classify students into different performance categories.
+- To calculate the percentage of students in each category.
+- To calculate additional statistical measures.
+- To determine the overall class performance.
+- To visualize important relationships using Matplotlib.
+- To demonstrate practical Python programming and data analysis skills.
+- To practice modular programming and project organization.
+- To manage and document a Python project using Git and GitHub.
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
 |---|---|
-| 85 and above | Excellent |
-| 70 – 84 | Good |
-| Below 70 | Needs Improvement |
-
-The classification is performed automatically using a Python function.
-
----
-
-## 📊 Performance Distribution
-
-The application calculates:
-
-- Number of students in each performance category
-- Percentage of students in each category
-
-This provides a quick overview of the class performance distribution.
+| Python | Main programming language |
+| Pandas | Data manipulation and analysis |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| Jupyter Notebook | Interactive analysis |
+| Google Colab | Notebook development and execution |
+| Git | Version control |
+| GitHub | Project hosting and documentation |
+| VS Code | Project development |
 
 ---
 
-## 🔗 Correlation Analysis
+# 📚 Python Concepts Demonstrated
 
-The project calculates the correlation between final marks and:
+This project demonstrates several Python programming concepts:
 
-- Study hours
-- Attendance
-- Assignment scores
-- Previous marks
-
-This helps examine relationships between different academic factors.
-
----
-
-## 📈 Data Visualization
-
-The project generates three visualizations:
-
-1. Study Hours vs Final Marks
-2. Attendance vs Final Marks
-3. Assignment Score vs Final Marks
-
-The visualizations make numerical relationships easier to understand.
+- Variables
+- Lists
+- Dictionaries
+- Functions
+- Conditional statements
+- Loops
+- String formatting
+- DataFrames
+- Data filtering
+- Statistical calculations
+- Data classification
+- Modular programming
+- File organization
+- External Python libraries
+- Virtual environments
+- Version control
 
 ---
 
-## 🧮 Overall Class Performance
+# 📊 Dataset Description
 
-The application determines the overall class performance using the average
-final marks.
+The project contains data for **20 students**.
 
-The classification follows the same performance thresholds used for individual
-students.
+Each student record contains the following attributes:
 
----
+| Column | Data Type | Description |
+|---|---|---|
+| `Student_ID` | Integer | Unique identification number |
+| `Study_Hours` | Integer | Number of hours spent studying |
+| `Attendance` | Integer | Attendance percentage |
+| `Assignment_Score` | Integer | Assignment score |
+| `Previous_Marks` | Integer | Previous examination marks |
+| `Final_Marks` | Integer | Final examination marks |
 
-# 🔄 Analysis Workflow
+### Example
 
 ```text
-Student Dataset
-      ↓
-Data Exploration
-      ↓
-Average Calculations
-      ↓
-Highest / Lowest Analysis
-      ↓
-Performance Classification
-      ↓
-Category Distribution
-      ↓
-Correlation Analysis
-      ↓
-Data Visualization
-      ↓
-Overall Performance Summary
+Student_ID    Study_Hours    Attendance    Assignment_Score    Final_Marks
+1             2              65            55                  52
+2             5              85            82                  80
+3             3              72            68                  67
