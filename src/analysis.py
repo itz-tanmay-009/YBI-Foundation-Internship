@@ -66,3 +66,20 @@ def determine_class_performance(average_final):
     if average_final >= 70:
         return "Good"
     return "Needs Improvement"
+
+
+def find_students_needing_improvement(df):
+    """Return students whose final marks are below 70."""
+    return df[df["Final_Marks"] < 70][
+        ["Student_ID", "Final_Marks"]
+    ]
+
+
+def calculate_performance_statistics(df):
+    """Calculate additional statistical measures for final marks."""
+    return {
+        "median_final": df["Final_Marks"].median(),
+        "std_final": df["Final_Marks"].std(),
+        "minimum_final": df["Final_Marks"].min(),
+        "maximum_final": df["Final_Marks"].max()
+    }
