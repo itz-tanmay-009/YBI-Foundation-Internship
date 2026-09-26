@@ -1,4 +1,5 @@
 from data import create_student_dataset
+from validation import validate_dataset
 from analysis import (
     calculate_averages,
     find_top_and_lowest_students,
@@ -59,6 +60,7 @@ def display_completion_summary():
     print("\n" + "=" * 55)
     print("             ANALYSIS COMPLETED")
     print("=" * 55)
+    print("Dataset validation completed.")
     print("Dataset processed successfully.")
     print("Statistical analysis completed.")
     print("Performance classification completed.")
@@ -73,6 +75,9 @@ def main():
 
     # Create the student dataset
     df = create_student_dataset()
+
+    # Validate the dataset before analysis
+    validate_dataset(df)
 
     print("\n" + "=" * 55)
     print("          STUDENT PERFORMANCE ANALYSIS")
